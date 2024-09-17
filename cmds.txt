@@ -1,0 +1,31 @@
+#!/bin/bash
+sudo apt update
+sudo apt-get install -y poppler-utils
+sudo apt-get install -y tesseract-ocr
+~/.bashrc
+
+####  Copy them all and paste in the terminal
+azd env set USE_FEATURE_INT_VECTORIZATION false
+azd env set USE_GPT4V true
+azd env set AZURE_OPENAI_CHATGPT_MODEL gpt-4o
+azd env set AZURE_OPENAI_CHATGPT_DEPLOYMENT chat4
+azd env set AZURE_OPENAI_CHATGPT_DEPLOYMENT_CAPACITY 30
+azd env set AZURE_OPENAI_CHATGPT_DEPLOYMENT_VERSION 2024-05-13
+azd env set AZURE_OPENAI_EMB_MODEL_NAME text-embedding-3-large
+azd env set AZURE_OPENAI_EMB_DEPLOYMENT embedding3l
+azd env set AZURE_OPENAI_EMB_DEPLOYMENT_CAPACITY 30
+azd env set AZURE_OPENAI_EMB_DEPLOYMENT_VERSION 1
+azd env set AZURE_OPENAI_EMB_DIMENSIONS 2048
+azd env set USE_SPEECH_INPUT_BROWSER true
+azd env set USE_SPEECH_OUTPUT_BROWSER true
+azd env set USE_LOCAL_PDF_PARSER true
+azd env set AZURE_SEARCH_SEMANTIC_RANKER standard
+azd env set AZURE_USE_AUTHENTICATION true
+azd env set AZURE_ENFORCE_ACCESS_CONTROL false
+azd env set AZURE_ENABLE_GLOBAL_DOCUMENT_ACCESS true
+azd env set AZURE_ENABLE_UNAUTHENTICATED_ACCESS true
+azd env set AZURE_AUTH_TENANT_ID 0bca7ac3-fcb6-4efd-89eb-6de97603cf21
+azd env set USE_USER_UPLOAD true
+export AZURE_TENANT_ID=0bca7ac3-fcb6-4efd-89eb-6de97603cf21
+
+
